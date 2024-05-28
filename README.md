@@ -1,91 +1,42 @@
-# Laravel Breeze - Next.js Edition ▲
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-## Introduction
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-This repository is an implementation of the [Laravel Breeze](https://laravel.com/docs/starter-kits) application / authentication starter kit frontend in [Next.js](https://nextjs.org). All of the authentication boilerplate is already written for you - powered by [Laravel Sanctum](https://laravel.com/docs/sanctum), allowing you to quickly begin pairing your beautiful Next.js frontend with a powerful Laravel backend.
 
-## Official Documentation
+## Alcance y estado de este software
 
-### Installation
+El objetivo de  este software es únicamente para fines demostrativos como resultado de una prueba técnica. 
 
-First, create a Next.js compatible Laravel backend by installing Laravel Breeze into a [fresh Laravel application](https://laravel.com/docs/installation) and installing Breeze's API scaffolding:
+## Hotelinking-Front-v1.0
 
-```bash
-# Create the Laravel application...
-laravel new next-backend
+En la implementación de este frontend se usó el framework NextJs 14, Tailwind, Javascript. La estructura básica de este frontend fué extraida (por sugerencia del sitio oficial de Laravel) del repositorio https://github.com/laravel/breeze-next
 
-cd next-backend
+Para el funcionamiento de este frontend, es necesario tener instalado NodeJs y Git 
 
-# Install Breeze and dependencies...
-composer require laravel/breeze --dev
+El código de este frontend solo está probado en modo developer, por lo tanto la forma de lanzar el front es:
 
-php artisan breeze:install api
+carpeta correspondiente/Hotelinkig-front$ npm run dev
 
-# Run database migrations...
-php artisan migrate
-```
+al ejecutar este comando en la terminal de visualizará el siguiente mensaje:
 
-Next, ensure that your application's `APP_URL` and `FRONTEND_URL` environment variables are set to `http://localhost:8000` and `http://localhost:3000`, respectively.
+   > breeze-next@0.1.0 dev
+> next dev
 
-After defining the appropriate environment variables, you may serve the Laravel application using the `serve` Artisan command:
+  ▲ Next.js 14.2.3
+  - Local:        http://localhost:3000
+  - Environments: .env.local
 
-```bash
-# Serve the application...
-php artisan serve
-```
+ ✓ Starting...
+ ✓ Ready in 2.4s
 
-Next, clone this repository and install its dependencies with `yarn install` or `npm install`. Then, copy the `.env.example` file to `.env.local` and supply the URL of your backend:
+  Y ese mensaje indica que el front está corriendo. Se puede hacer cntrl+enter con el mouse sobre " http://localhost:3000" y se abrirá en el browser una página con la opcion de Login y Register.
+  Al registrarse y loguearse el usuario será redirigido a la página principal, en la cual teniendo los datos de la base de datos en uso, se podrá ver en la página lo siguiente: 
 
-```
-NEXT_PUBLIC_BACKEND_URL=http://localhost:8000
-```
+  ![alt text](image.png)
 
-Finally, run the application via `npm run dev`. The application will be available at `http://localhost:3000`:
-
-```
-npm run dev
-```
-
-> Note: Currently, we recommend using `localhost` during local development of your backend and frontend to avoid CORS "Same-Origin" issues.
-
-### Authentication Hook
-
-This Next.js application contains a custom `useAuth` React hook, designed to abstract all authentication logic away from your pages. In addition, the hook can be used to access the currently authenticated user:
-
-```js
-const ExamplePage = () => {
-    const { logout, user } = useAuth({ middleware: 'auth' })
-
-    return (
-        <>
-            <p>{user?.name}</p>
-
-            <button onClick={logout}>Sign out</button>
-        </>
-    )
-}
-
-export default ExamplePage
-```
-
-> Note: You will need to use [optional chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) (`user?.name` instead of `user.name`) when accessing properties on the user object to account for Next.js's initial server-side render.
-
-### Named Routes
-
-For convenience, [Ziggy](https://github.com/tighten/ziggy#spas-or-separate-repos) may be used to reference your Laravel application's named route URLs from your React application.
-
-## Contributing
-
-Thank you for considering contributing to Breeze Next! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-Please review [our security policy](https://github.com/laravel/breeze-next/security/policy) on how to report security vulnerabilities.
-
-## License
-
-Laravel Breeze Next is open-sourced software licensed under the [MIT license](LICENSE.md).
+  Los botones indicados con el texto "Agregar código único promocional" n tienen implementada su función.
