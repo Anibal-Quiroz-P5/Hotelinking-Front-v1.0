@@ -39,4 +39,4 @@ al ejecutar este comando en la terminal de visualizará el siguiente mensaje:
 
   ![alt text](image.png)
 
-  Los botones indicados con el texto "Agregar código único promocional" n tienen implementada su función.
+  Los botones indicados con el texto "Agregar código único promocional" no tienen implementada su función.
